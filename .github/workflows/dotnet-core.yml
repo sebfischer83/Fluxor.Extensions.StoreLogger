@@ -30,6 +30,11 @@ jobs:
       run: dotnet restore
     - name: Run './build.cmd BuildDemoPage'
       run: ./build.cmd BuildDemoPage
+    - name: Rewrite Base Href
+      uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
+      with:
+        html_path: 'artifacts/site/index.html'
+        base_href: '/Fluxor.Extensions.StoreLogger/'
     - name: GitHub Pages action
       if: ${{ github.ref == 'refs/heads/develop' }}
       uses: peaceiris/actions-gh-pages@v3.6.1
