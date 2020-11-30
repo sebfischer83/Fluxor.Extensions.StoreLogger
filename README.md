@@ -1,4 +1,4 @@
-# Seb.Fluxor.Blazor.LocalStorageMiddleware
+# Fluxor.Extensions.StoreLogger
 
-![build](https://github.com/sebfischer83/Seb.Fluxor.Blazor.LocalStorageMiddleware/workflows/build/badge.svg)
-![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Seb.Fluxor.Blazor.LocalStorageMiddleware)
+![develop](https://github.com/sebfischer83/Traccaradora/workflows/continuous/badge.svg)
+![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Fluxor.Extensions.StoreLogger)
