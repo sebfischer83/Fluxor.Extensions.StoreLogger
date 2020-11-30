@@ -52,6 +52,8 @@ class Build : NukeBuild
     AbsolutePath ArtifactsDirectory => RootDirectory / "artifacts";
     AbsolutePath PackageDirectory => ArtifactsDirectory / "packages";
 
+    AbsolutePath SiteDirectory => ArtifactsDirectory / "site";
+
     Target Clean => _ => _
         .Before(Restore)
         .Executes(() =>
@@ -96,9 +98,16 @@ class Build : NukeBuild
      });
 
     Target BuildDemoPage => _ => _
+     .DependsOn(Compile)
      .Executes(() =>
      {
-        
+         DotNetPublish(_ => _
+         .SetProject(Solution.GetProject("Fluxor.Extensions.StoreLogger.Demo"))
+         .SetNoBuild(InvokedTargets.Contains(Compile))
+         .SetConfiguration(Configuration)
+         .SetVersion(GitVersion.NuGetVersionV2)
+         .SetOutput(SiteDirectory)
+         );
      });
 
     Target Publish => _ => _

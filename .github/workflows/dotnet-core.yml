@@ -28,5 +28,5 @@ jobs:
         dotnet-version: '3.1.x'
     - name: Install dependencies
       run: dotnet restore
-    - name: Run './build.cmd Compile'
-      run: ./build.cmd Compile
+    - name: Run './build.cmd BuildDemoPage'
+      run: ./build.cmd BuildDemoPage
