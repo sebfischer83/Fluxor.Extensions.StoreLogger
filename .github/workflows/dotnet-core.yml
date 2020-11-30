@@ -33,7 +33,7 @@ jobs:
     - name: Rewrite Base Href
       uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
       with:
-        html_path: 'artifacts/site/index.html'
+        html_path: 'artifacts/site/wwwroot/index.html'
         base_href: '/Fluxor.Extensions.StoreLogger/'
     - name: GitHub Pages action
       if: ${{ github.ref == 'refs/heads/develop' }}
