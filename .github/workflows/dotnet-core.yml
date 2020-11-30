@@ -1,10 +1,13 @@
-name: .NET Core
+name: continuous
 
 on:
   push:
-    branches: [ develop ]
+    branches-ignore:
+      - master
+      - release/*
   pull_request:
-    branches: [ develop ]
+    branches:
+      - develop
 
 jobs:
   build:
