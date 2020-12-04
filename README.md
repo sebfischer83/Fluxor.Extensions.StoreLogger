@@ -1,5 +1,7 @@
 # Fluxor.Extensions.StoreLogger
 
+A library to visualize actions in the browser console.
+
 ![develop](https://github.com/sebfischer83/Traccaradora/workflows/continuous/badge.svg)  
 ![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Fluxor.Extensions.StoreLogger)  
 
