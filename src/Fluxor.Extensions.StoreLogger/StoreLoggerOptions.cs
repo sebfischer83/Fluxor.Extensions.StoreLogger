@@ -1,9 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Fluxor.Extensions.StoreLogger
 {
-    public class StoreLoggerOptions
+    public record StoreLoggerOptions
     {
-        public bool Enabled { get; set; }
+        public bool Enabled { get; init; }
+
+        public IList<string> ExcludedStores { get; init; }
+        public IList<string> IncludedStores { get; init; }
+
+        public Func<IFeature, bool> Filter { get; init; }
+
+        public StoreLoggerOptions()
+        {
+            Enabled = true;
+        }
+
     }
 }

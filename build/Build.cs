@@ -17,6 +17,7 @@ using static Nuke.Common.IO.PathConstruction;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
 using static Nuke.Common.ChangeLog.ChangelogTasks;
 using static Nuke.Common.Tools.Git.GitTasks;
+using static Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerTasks;
 using System.IO;
 
 [CheckBuildProjectConfigurations]
@@ -97,7 +98,15 @@ class Build : NukeBuild
              .SetPackageReleaseNotes(GetNuGetReleaseNotes(ChangelogFile, GitRepository)));
      });
 
-    Target BuildDemoPage => _ => _
+    //Target Release => _ => _
+    // .DependsOn(Pack)
+    // .Executes(() =>
+    // {
+    //     GitReleaseManagerCreate(_ => _
+    //     .)
+    // });
+
+     Target BuildDemoPage => _ => _
      .DependsOn(Compile)
      .Executes(() =>
      {
